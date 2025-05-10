@@ -1,0 +1,122 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cell:hover {
+    background-color: #e0f7fa;
+    transform: scale(1.05);
+    border-color: #217dbb;
+}
+
+.cell.x {
+    color: #e74c3c;
+}
+
+.cell.o {
+    color: #3498db;
+}
+
+.cell.disabled {
+    cursor: default;
+}
+
+.cell.winning-cell {
+    background-color: #d4edda !important;
+    border-color: #c3e6cb !important;
+    color: #155724 !important;
+}
+
+#reset-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #20639b;
+}
+
+#reset-button:hover {
+    background: linear-gradient(to bottom, #4a90e2, #2071a8);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#reset-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#message-container {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    min-height: 30px;
+    transition: color 0.3s ease;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+#message-container.赢了 {
+    color: #2ecc71;
+}
+
+#message-container.平局 {
+    color: #f39c12;
+}
+
+#message-container.错了 {
+    color: #e74c3c;
+}
