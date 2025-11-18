@@ -73,7 +73,6 @@ function resetGame() {
     cells.forEach(cell => {
         cell.textContent = '';
         cell.classList.remove('x', 'o', 'winning-cell', 'disabled');
-        cell.onclick = handleCellClick;
     });
     messageContainer.textContent = '';
     messageContainer.className = '';
